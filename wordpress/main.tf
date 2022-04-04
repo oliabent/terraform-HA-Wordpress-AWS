@@ -19,3 +19,10 @@ module "vpc-dev" {
   env = "dev"
   
 }
+
+module "sg-dev" {
+  source = "../modules/aws_security_group"
+  
+  vpc_id = module.vpc-dev.vpc_id
+  
+}
